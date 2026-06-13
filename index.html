@@ -54,8 +54,8 @@
     <!-- 1. HEADER AK FOTO LOGO PA W LA + NAVIGASYON -->
     <header>
         <div class="logo-container-elevation">
-    <img src="logo.png" alt="Elevation Académie" class="logo-header">
-    <span class="nom-academie-header"></span>
+    <img src="logo.png" alt
+      class="nom-academie-header">ELEVATION ACADÉMIE</span>
 </div>
         <nav>
             <a href="#">Accueil</a>
@@ -452,5 +452,87 @@
             .zone-details-evenement { padding: 30px 20px; }
             .bloc-actions-sociales { flex-direction: column; }
             .btn-action-evenement { width: 100%; }
-        }
-    </style>
+        } <!-- ======================================================= -->
+<!-- SEKSYON: À PROPOS DE NOUS (STIL MINIMALISTE)            -->
+<!-- ======================================================= -->
+<section class="section-about-elevation">
+    <div class="about-container">
+        <!-- Ti sub-title anlè a ak ti espas ant lèt yo -->
+        <span class="about-subtitle">À PROPOS DE NOUS</span>
+        
+        <!-- Gwo Tit prensipal la nan mitan -->
+        <h2 class="about-main-title">ELEVATION ACADÉMIE</h2>
+        
+        <!-- Blòk tèks yo ki santre epi ki byen aere -->
+        <div class="about-text-content">
+            <p>
+                Bienvenue à <strong>Elevation Académie</strong>, une plateforme de formation moderne dédiée à l'apprentissage pratique et à l'élévation des compétences. Notre mission est d'offrir à chaque apprenant des cours accessibles, structurés et adaptés aux réalités du monde professionnel.
+            </p>
+            <p>
+                Nous proposons des formations dans plusieurs domaines afin d'aider les étudiants, entrepreneurs et professionnels à développer leurs talents, progresser à leur rythme et atteindre leurs objectifs. Grâce à une approche simple, interactive et orientée vers la pratique, nous mettons l'éducation à la portée de tous.
+            </p>
+            <p class="about-highlight">
+                À Elevation Académie, nous croyons que la connaissance est une clé pour transformer des vies et ouvrir de nouvelles opportunités.
+            </p>
+        </div>
+    </div>
+</section>
+/* Styling pou Seksyon À Propos */
+.section-about-elevation {
+    background-color: #ffffff; /* Sifas blan byen pwòp tankou modèl la */
+    padding: 90px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container {
+    max-width: 850px; /* Pou tèks la pa twò laj e pou l fasil pou moun li */
+    margin: 0 auto;
+}
+
+.about-subtitle {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1b4d3e; /* Koulè vèt fonse sit ou a */
+    letter-spacing: 4px; /* Ti espas ant lèt yo jan sa ye nan foto a */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-main-title {
+    font-size: 48px; /* Gwo tit byen frapan */
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-text-content p {
+    font-size: 16px;
+    line-height: 1.8; /* Bay liy yo espas pou yo respire */
+    color: #4a5568; /* Yon ti gri fonse dous ki pa fatige je */
+    margin-bottom: 25px;
+    text-align: center; /* Santre tèks yo parfe jan w te mande l la */
+}
+
+.about-text-content strong {
+    color: #1b4d3e;
+}
+
+/* Ti anfaz sou dènye fraz la */
+.about-highlight {
+    font-size: 18px !important;
+    font-weight: 600;
+    color: #1b4d3e !important;
+    margin-top: 35px;
+    font-style: italic;
+}
+
+/* Responsive pou telefòn */
+@media (max-width: 768px) {
+    .section-about-elevation { padding: 60px 15px; }
+    .about-main-title { font-size: 32px; margin-bottom: 25px; }
+    .about-text-content p { font-size: 15px; line-height: 1.7; }
+}
