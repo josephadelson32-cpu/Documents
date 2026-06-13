@@ -81,7 +81,7 @@
                 <div class="cours-info">
                     <h3>Informatique Bureautique</h3>
                     <p>Maîtrisez l'environnement Windows, Word, Excel, PowerPoint et la navigation internet de base.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'informatique')">Voir le cours</button>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
                 <div class="cours-info">
                     <h3>Montage Vidéo Professionnel</h3>
                     <p>Maîtrisez les coupures, les transitions, les effets spéciaux et exportez vos projets comme un pro.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'montage')">Voir le cours</button>
                 </div>
             </div>
 
@@ -101,7 +101,7 @@
                 <div class="cours-info">
                     <h3>Live Streaming Pro</h3>
                     <p>Apprenez à diffuser en direct comme un pro avec une configuration stable et une qualité studio.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'streaming')">Voir le cours</button>
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
                 <div class="cours-info">
                     <h3>Marketing Digital</h3>
                     <p>Devenez un expert en publicité en ligne, créez des tunnels de vente et boostez votre visibilité.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'marketing')">Voir le cours</button>
                 </div>
             </div>
 
@@ -121,7 +121,7 @@
                 <div class="cours-info">
                     <h3>Entrepreneuriat</h3>
                     <p>Créez, gérez et développez votre propre entreprise avec succès et stratégie financière.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'entrepreneuriat')">Voir le cours</button>
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
                 <div class="cours-info">
                     <h3>Retouche Photo Pro</h3>
                     <p>Apprenez la correction des couleurs, la retouche de peau et le traitement d'image professionnel.</p>
-                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                    <button class="btn" onclick="verifierConnexion(event, 'retouche')">Voir le cours</button>
                 </div>
             </div>
 
@@ -140,14 +140,21 @@
 
     <!-- 4. JAVASCRIPT : Ki voye moun sou signup.html -->
     <script>
-        function verifierConnexion(event) {
-            if(event) event.preventDefault();
-            
-            // Afiche mesaj la
+        function verifierConnexion(event, coursId) {
+            if (event) event.preventDefault();
+
+            if (coursId) {
+                localStorage.setItem('cours_choisi', coursId);
+            }
+
+            let isConnected = !!localStorage.getItem('elevation_user_name');
+            if (isConnected) {
+                window.location.href = 'dashboard.html';
+                return;
+            }
+
             alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos de ce cours.");
-            
-            // Voye moun nan sou paj signup.html la otomatikman
-            window.location.href = "signup.html"; 
+            window.location.href = 'signup.html';
         }
     </script>
 
