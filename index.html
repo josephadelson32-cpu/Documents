@@ -53,9 +53,10 @@
 
     <!-- 1. HEADER AK FOTO LOGO PA W LA + NAVIGASYON -->
     <header>
-        <div class="logo-container">
-            <img src="logo png.png" alt="Elevation Académie">
-        </div>
+        <div class="logo-container-elevation">
+    <img src="logo.png" alt="Elevation Académie" class="logo-header">
+    <span class="nom-academie-header"></span>
+</div>
         <nav>
             <a href="#">Accueil</a>
             <a href="#cours">Nos Cours</a>
@@ -67,6 +68,93 @@
     <section class="hero-banner">
         <h1>Bienvenue ! Découvrez nos cours</h1>
         <p>Suivez chaque formation avec <strong>patience</strong>, <strong>détermination</strong> et régularité. Prenez le temps de bien pratiquer pour maîtriser votre futur métier. Le succès vous attend !</p>
+       <!-- ======================================================= -->
+<!-- SEKSYON VIDEYO PREZANTASYON ELEVATION ACADÉMIE         -->
+<!-- ======================================================= -->
+<section class="section-video-presentation">
+    <div class="video-container">
+        <!-- Videyo autoplay, looped, epi muted pou Chrome ka kite l jwe otomatikman -->
+        <video autoplay muted loop playsinline id="video-promo-elevation">
+            <source src="prezantasyon.mp4.mp4" type="video/mp4">
+        </video>
+        <style>
+    .section-video-presentation {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
+        background-color: #13382d;
+    }
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .overlay-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(19, 56, 45, 0.5), rgba(19, 56, 45, 0.85));
+        display: flex;
+        align-items: center;
+        padding: 40px;
+    }
+    .kontni-video {
+        max-width: 600px;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .badge-video {
+        background: #ff9f43;
+        color: white;
+        padding: 5px 12px;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    .kontni-video h2 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    .kontni-video p {
+        font-size: 16px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    /* Responsive pou telefòn */
+    @media (max-width: 768px) {
+        .video-container { height: 300px; }
+        .kontni-video h2 { font-size: 24px; }
+        .kontni-video p { font-size: 14px; }
+        .overlay-video { padding: 20px; }
+    }
+</style>
+        
+        <!-- Bèl kouch koulè vèt transparan sou videyo a pou l kadre ak stil sit la -->
+        <div class="overlay-video">
+            <div class="kontni-video">
+                <span class="badge-video"></span>
+                <h2>Propulsez votre avenir avec Elevation Académie</h2>
+                <p>Découvrez en 1 minute comment nos formations pratiques vont vous aider à maîtriser le montage vidéo, l'informatique et le live streaming.</p>
+            </div>
+        </div>
+    </div>
+</section>
         <a href="#cours" class="btn-discover">Découvrir nos cours</a>
     </section>
 
@@ -138,24 +226,44 @@
         </div>
     </section>
 
-    <!-- 4. JAVASCRIPT : Ki voye moun sou signup.html -->
+    <!-- 4. JAVASCRIPT : Ki voye moun sou signup.html oswa Google Form -->
     <script>
-        function verifierConnexion(event, coursId) {
-            if (event) event.preventDefault();
+    function verifierConnexion(event, coursId) {
+        // Nou bloke aksyon pa defo a pou kòd la ka ekzekite nèt
+        if (event) event.preventDefault();
 
-            if (coursId) {
-                localStorage.setItem('cours_choisi', coursId);
-            }
+        if (!coursId) return;
 
-            let isConnected = !!localStorage.getItem('elevation_user_name');
-            if (isConnected) {
+        // 1. Tcheke si moun nan konekte sou sit la deja
+        let isConnected = !!localStorage.getItem('elevation_user_name');
+
+        if (isConnected) {
+            // Nou sove kou li chwazi a pou dashboard la ka konnen ki kou pou l montre l
+            localStorage.setItem('cours_choisi', coursId);
+
+            // 2. Tcheke si li te deja klike sou fòmasyon sa a anvan
+            let dejaEnskriForm = localStorage.getItem('form_' + coursId);
+
+            if (!dejaEnskriForm) {
+                // PREMYE FWA: Nou make l nan memwa a anvan nou pati
+                localStorage.setItem('form_' + coursId, "true");
+
+                // Lyen Google Form pa w la
+                let lyenGoogleForm = "https://docs.google.com/forms/d/e/1FAIpQLSc8tsABw42wrrb1ncDmmCwc7Wk26uRLENBk-w-TUiHKy2OeFQ/viewform?usp=publish-editor";
+                
+                // Nou louvri fòm nan nan yon lòt tab
+                window.open(lyenGoogleForm, '_blank');
+            } else {
+                // DEZYÈM FWA OUBYEN LÈ L TOUNEN: Nou voye l dwat nan dashboard li
                 window.location.href = 'dashboard.html';
-                return;
             }
-
-            alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos de ce cours.");
+        } else {
+            // Si moun nan pa konekte, nou sove kou a tou pou lè l fini enskri pou l ka konnen kote l prale
+            localStorage.setItem('cours_choisi', coursId);
+            alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos.");
             window.location.href = 'signup.html';
         }
+    }
     </script>
 
 </body>
