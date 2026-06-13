@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevation Académie - Accueil</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f7f6; color: #333; scroll-behavior: smooth; }
+
+        /* HEADER DESIGN */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        
+        /* LOGO EN INTEGRASYON FOTO */
+        .logo-container img { height: 50px; display: block; object-fit: contain; }
+        
+        nav { display: flex; align-items: center; }
+        nav a { margin-left: 20px; color: #333; text-decoration: none; font-weight: 500; }
+        .btn-header { background: #1b4d3e; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+
+        /* GWO BANNÈ AK FOTO BACKGROUND (HERO SECTION) */
+        .hero-banner { 
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(45, 90, 76, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600') no-repeat center center/cover; 
+            color: white; 
+            text-align: center; 
+            padding: 100px 20px; 
+        }
+        .hero-banner h1 { font-size: 42px; margin-bottom: 15px; color: #ffffff; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero-banner p { font-size: 19px; max-width: 800px; margin: 0 auto 30px auto; line-height: 1.6; opacity: 0.95; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .hero-banner strong { color: #ff9f43; }
+        
+        /* BOUTON NAN ANTÈT LA */
+        .btn-discover { display: inline-block; background: #ff9f43; color: white; text-decoration: none; padding: 14px 30px; border-radius: 6px; font-weight: bold; font-size: 16px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .btn-discover:hover { background: #e08528; transform: translateY(-2px); }
+
+        /* SEKSYON KOU YO */
+        .section-cours { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .grille-cours { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        
+        .carte-cours { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: transform 0.2s; }
+        .carte-cours:hover { transform: translateY(-5px); }
+        .carte-cours img { width: 100%; height: 200px; object-fit: cover; }
+        
+        .cours-info { padding: 20px; }
+        .cours-info h3 { font-size: 20px; color: #1b4d3e; margin-bottom: 10px; }
+        .cours-info p { color: #666; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+        
+        .btn { display: block; text-align: center; background: #1b4d3e; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; transition: 0.2s; border: none; width: 100%; font-size: 16px; cursor: pointer; }
+        .btn:hover { background: #13382d; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER AK FOTO LOGO PA W LA + NAVIGASYON -->
+    <header>
+        <div class="logo-container">
+            <img src="file:///C:/Users/PC/Pictures/logo%20png.png" alt="Elevation Académie">
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#cours">Nos Cours</a>
+            <a href="signup.html" class="btn-header">S'inscrire / Connexion</a>
+        </nav>
+    </header>
+
+    <!-- 2. GWO BANNÈ AK FOTO BACKGROUND + BOUTON DECOUVRIR -->
+    <section class="hero-banner">
+        <h1>Bienvenue ! Découvrez nos cours</h1>
+        <p>Suivez chaque formation avec <strong>patience</strong>, <strong>détermination</strong> et régularité. Prenez le temps de bien pratiquer pour maîtriser votre futur métier. Le succès vous attend !</p>
+        <a href="#cours" class="btn-discover">Découvrir nos cours</a>
+    </section>
+
+    <!-- 3. SEKSYON TOUT KOU YO (6 FÒMASYON NÈT KOUNYE A) -->
+    <section id="cours" class="section-cours">
+        <h2 style="font-size: 22px; color: #1b4d3e; font-weight: bold;">✨ Nos Formations Disponibles</h2>
+        <div class="grille-cours">
+            
+            <!-- Kou 1: Informatique -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500" alt="Informatique">
+                <div class="cours-info">
+                    <h3>Informatique Bureautique</h3>
+                    <p>Maîtrisez l'environnement Windows, Word, Excel, PowerPoint et la navigation internet de base.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+            <!-- Kou 2: Montage Vidéo -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500" alt="Montage Vidéo">
+                <div class="cours-info">
+                    <h3>Montage Vidéo Professionnel</h3>
+                    <p>Maîtrisez les coupures, les transitions, les effets spéciaux et exportez vos projets comme un pro.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+            <!-- Kou 3: Live Streaming -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500" alt="Live Streaming">
+                <div class="cours-info">
+                    <h3>Live Streaming Pro</h3>
+                    <p>Apprenez à diffuser en direct comme un pro avec une configuration stable et une qualité studio.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+            <!-- Kou 4: Marketing Digital -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Marketing Digital">
+                <div class="cours-info">
+                    <h3>Marketing Digital</h3>
+                    <p>Devenez un expert en publicité en ligne, créez des tunnels de vente et boostez votre visibilité.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+            <!-- Kou 5: Entrepreneuriat -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500" alt="Entrepreneuriat">
+                <div class="cours-info">
+                    <h3>Entrepreneuriat</h3>
+                    <p>Créez, gérez et développez votre propre entreprise avec succès et stratégie financière.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+            <!-- Kou 6: Retouche Photo -->
+            <div class="carte-cours">
+                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500" alt="Retouche Photo">
+                <div class="cours-info">
+                    <h3>Retouche Photo Pro</h3>
+                    <p>Apprenez la correction des couleurs, la retouche de peau et le traitement d'image professionnel.</p>
+                    <button class="btn" onclick="verifierConnexion(event)">Voir le cours</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. JAVASCRIPT : Ki voye moun sou signup.html -->
+    <script>
+        function verifierConnexion(event) {
+            if(event) event.preventDefault();
+            
+            // Afiche mesaj la
+            alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos de ce cours.");
+            
+            // Voye moun nan sou paj signup.html la otomatikman
+            window.location.href = "signup.html"; 
+        }
+    </script>
+
+</body>
+</html>
