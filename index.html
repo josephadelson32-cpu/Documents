@@ -12,7 +12,9 @@
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         
         /* LOGO EN INTEGRASYON FOTO */
-        .logo-container img { height: 50px; display: block; object-fit: contain; }
+        .logo-container-elevation { display: flex; align-items: center; gap: 10px; }
+        .logo-container-elevation img { height: 50px; display: block; object-fit: contain; }
+        .nom-academie-header { font-weight: bold; color: #1b4d3e; letter-spacing: 1px; }
         
         nav { display: flex; align-items: center; }
         nav a { margin-left: 20px; color: #333; text-decoration: none; font-weight: 500; }
@@ -47,492 +49,400 @@
         
         .btn { display: block; text-align: center; background: #1b4d3e; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; transition: 0.2s; border: none; width: 100%; font-size: 16px; cursor: pointer; }
         .btn:hover { background: #13382d; }
+
+        /* ESPAS TRAVAY 10 VIDEO YO */
+        .section-workspace-cours { max-width: 1200px; margin: 30px auto; padding: 20px; display: none; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
+        .workspace-header { background: #1b4d3e; color: white; padding: 15px 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center; }
+        .workspace-grid { display: flex; gap: 30px; padding: 20px 0; }
+        .video-principal-box { flex: 2; }
+        .video-principal-box video { width: 100%; border-radius: 8px; background: #000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .playlist-box { flex: 1; background: #f8fafc; border-radius: 8px; padding: 15px; border: 1px solid #e2e8f0; max-height: 480px; overflow-y: auto; }
+        .playlist-title { font-size: 16px; font-weight: bold; color: #1b4d3e; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #cbd5e1; }
+        .playlist-item { display: flex; align-items: center; padding: 10px; background: white; margin-bottom: 10px; border-radius: 6px; border: 1px solid #e2e8f0; cursor: pointer; transition: 0.2s; }
+        .playlist-item.active { background: #e2f0ec; border-color: #1b4d3e; font-weight: bold; }
+        .playlist-item.locked { opacity: 0.5; cursor: not-allowed; background: #f1f5f9; }
+        .playlist-item span { font-size: 14px; color: #334155; }
+        .badge-status { margin-left: auto; font-size: 12px; font-weight: bold; padding: 2px 8px; border-radius: 4px; }
+        .badge-status.b-locked { background: #cbd5e1; color: #64748b; }
+        .badge-status.b-unlocked { background: #ff9f43; color: white; }
+        .badge-status.b-done { background: #1b4d3e; color: white; }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER AK FOTO LOGO PA W LA + NAVIGASYON -->
+    <!-- 1. HEADER AK FOTO LOGO -->
     <header>
         <div class="logo-container-elevation">
-    <img src="logo.png" alt
-      class="nom-academie-header">ELEVATION ACADÉMIE</span>
-</div>
+            <img src="logo.png" alt="Logo Elevation Académie">
+            <span class="nom-academie-header">ELEVATION ACADÉMIE</span>
+        </div>
         <nav>
-            <a href="#">Accueil</a>
-            <a href="#cours">Nos Cours</a>
+            <a href="#" onclick="retounenNanLis()">Accueil</a>
+            <a href="#cours" onclick="retounenNanLis()">Nos Cours</a>
+            <a href="#contact">Contact</a>
             <a href="signup.html" class="btn-header">S'inscrire / Connexion</a>
         </nav>
     </header>
 
-    <!-- 2. GWO BANNÈ AK FOTO BACKGROUND + BOUTON DECOUVRIR -->
-    <section class="hero-banner">
-        <h1>Bienvenue ! Découvrez nos cours</h1>
-        <p>Suivez chaque formation avec <strong>patience</strong>, <strong>détermination</strong> et régularité. Prenez le temps de bien pratiquer pour maîtriser votre futur métier. Le succès vous attend !</p>
-       <!-- ======================================================= -->
-<!-- SEKSYON VIDEYO PREZANTASYON ELEVATION ACADÉMIE         -->
-<!-- ======================================================= -->
-<section class="section-video-presentation">
-    <div class="video-container">
-        <!-- Videyo autoplay, looped, epi muted pou Chrome ka kite l jwe otomatikman -->
-        <video autoplay muted loop playsinline id="video-promo-elevation">
-            <source src="prezantasyon.mp4.mp4" type="video/mp4">
-        </video>
-        <style>
-    .section-video-presentation {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-    .video-container {
-        position: relative;
-        width: 100%;
-        height: 450px;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
-        background-color: #13382d;
-    }
-    .video-container video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .overlay-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(19, 56, 45, 0.5), rgba(19, 56, 45, 0.85));
-        display: flex;
-        align-items: center;
-        padding: 40px;
-    }
-    .kontni-video {
-        max-width: 600px;
-        color: white;
-        font-family: 'Segoe UI', sans-serif;
-    }
-    .badge-video {
-        background: #ff9f43;
-        color: white;
-        padding: 5px 12px;
-        font-size: 11px;
-        font-weight: bold;
-        border-radius: 4px;
-        letter-spacing: 1px;
-        display: inline-block;
-        margin-bottom: 15px;
-    }
-    .kontni-video h2 {
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: 15px;
-        line-height: 1.2;
-    }
-    .kontni-video p {
-        font-size: 16px;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-
-    /* Responsive pou telefòn */
-    @media (max-width: 768px) {
-        .video-container { height: 300px; }
-        .kontni-video h2 { font-size: 24px; }
-        .kontni-video p { font-size: 14px; }
-        .overlay-video { padding: 20px; }
-    }
-</style>
-        
-        <!-- Bèl kouch koulè vèt transparan sou videyo a pou l kadre ak stil sit la -->
-        <div class="overlay-video">
-            <div class="kontni-video">
-                <span class="badge-video"></span>
-                <h2>Propulsez votre avenir avec Elevation Académie</h2>
-                <p>Découvrez en 1 minute comment nos formations pratiques vont vous aider à maîtriser le montage vidéo, l'informatique et le live streaming.</p>
-            </div>
-        </div>
-    </div>
-</section>
-        <a href="#cours" class="btn-discover">Découvrir nos cours</a>
-    </section>
-
-    <!-- 3. SEKSYON TOUT KOU YO (6 FÒMASYON NÈT KOUNYE A) -->
-    <section id="cours" class="section-cours">
-        <h2 style="font-size: 22px; color: #1b4d3e; font-weight: bold;"> Nos Formations Disponibles</h2>
-        <div class="grille-cours">
+    <!-- NOU METE YON ID NAN BLÒK PAJ AKEY LA POU NOU KA KACHE LÈ YO KLIKE SOU YON KOU -->
+    <div id="blok-paj-akey">
+        <!-- 2. GWO BANNÈ AK FOTO BACKGROUND + BOUTON DECOUVRIR -->
+        <section class="hero-banner">
+            <h1>Bienvenue ! Découvrez nos cours</h1>
+            <p>Suivez chaque formation avec <strong>patience</strong>, <strong>détermination</strong> et régularité. Prenez le temps de bien pratiquer pour maîtriser votre mutant métier. Le succès vous attend !</p>
             
-            <!-- Kou 1: Informatique -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500" alt="Informatique">
-                <div class="cours-info">
-                    <h3>Informatique Bureautique</h3>
-                    <p>Maîtrisez l'environnement Windows, Word, Excel, PowerPoint et la navigation internet de base.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'informatique')">Voir le cours</button>
+            <!-- SEKSYON VIDEYO PREZANTASYON ELEVATION ACADÉMIE -->
+            <section class="section-video-presentation">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline id="video-promo-elevation">
+                        <source src="presentation.mp4.mp4" type="video/mp4">
+                    </video>
+                    <style>
+                        .section-video-presentation { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+                        .video-container { position: relative; width: 100%; height: 450px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15); background-color: #13382d; }
+                        .video-container video { width: 100%; height: 100%; object-fit: cover; }
+                        .overlay-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(19, 56, 45, 0.5), rgba(19, 56, 45, 0.85)); display: flex; align-items: center; padding: 40px; }
+                        .kontni-video { max-width: 600px; color: white; text-align: left; }
+                        .badge-video { background: #ff9f43; color: white; padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; letter-spacing: 1px; display: inline-block; margin-bottom: 15px; }
+                        @media (max-width: 768px) { .video-container { height: 300px; } .overlay-video { padding: 20px; } }
+                    </style>
+                    <div class="overlay-video">
+                        <div class="kontni-video">
+                            <span class="badge-video">ELEVATION ACADÉMIE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <a href="#cours" class="btn-discover">Découvrir nos cours</a>
+        </section>
+
+        <!-- 3. SEKSYON TOUT KOU YO -->
+        <section id="cours" class="section-cours">
+            <h2 style="font-size: 22px; color: #1b4d3e; font-weight: bold;"> Nos Formations Disponibles</h2>
+            <div class="grille-cours">
+                
+                <!-- Kou 1: Informatique -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=500" alt="Informatique">
+                    <div class="cours-info">
+                        <h3>Informatique Bureautique</h3>
+                        <p>Maîtrisez l'environnement Windows, Word, Excel, PowerPoint et la navigation internet de base.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'informatique', 'Informatique Bureautique')">Voir le cours</button>
+                    </div>
+                </div>
+
+                <!-- Kou 2: Montage Vidéo -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=500" alt="Montage Vidéo">
+                    <div class="cours-info">
+                        <h3>Montage Vidéo Professionnel</h3>
+                        <p>Maîtrisez les coupures, les transitions, les effets spéciaux et exportez vos projets comme un pro.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'montage', 'Montage Vidéo Professionnel')">Voir le cours</button>
+                    </div>
+                </div>
+
+                <!-- Kou 3: Live Streaming -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500" alt="Live Streaming">
+                    <div class="cours-info">
+                        <h3>Live Streaming Pro</h3>
+                        <p>Apprenez à diffuser en direct comme un pro avec une configuration stable et une qualité studio.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'streaming', 'Live Streaming Pro')">Voir le cours</button>
+                    </div>
+                </div>
+
+                <!-- Kou 4: Marketing Digital -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Marketing Digital">
+                    <div class="cours-info">
+                        <h3>Marketing Digital</h3>
+                        <p>Devenez un expert en publicité en ligne, créez des tunnels de vente et boostez votre visibilité.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'marketing', 'Marketing Digital')">Voir le cours</button>
+                    </div>
+                </div>
+
+                <!-- Kou 5: Entrepreneuriat -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500" alt="Entrepreneuriat">
+                    <div class="cours-info">
+                        <h3>Entrepreneuriat</h3>
+                        <p>Créez, gérez et développez votre propre entreprise avec succès et stratégie financière.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'entrepreneuriat', 'Entrepreneuriat')">Voir le cours</button>
+                    </div>
+                </div>
+
+                <!-- Kou 6: Retouche Photo -->
+                <div class="carte-cours">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500" alt="Retouche Photo">
+                    <div class="cours-info">
+                        <h3>Retouche Photo Pro</h3>
+                        <p>Apprenez la correction des couleurs, la retouche de peau et le traitement d'image professionnel.</p>
+                        <button class="btn" onclick="verifierConnexion(event, 'retouche', 'Retouche Photo Pro')">Voir le cours</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BÈL BANNER GRAFIK: AKTIVITE PRESANSYÈL -->
+        <section class="section-activites-pro">
+            <div class="activites-wrapper">
+                <h2 class="main-title-activites">Nos Activités Présentielles & Événements</h2>
+                <div class="carte-evenement-graphique">
+                    <div class="zone-image-evenement">
+                        <img src="pwoje-presansyel.jpg.jpg" alt="Formation Présentielle Elevation Académie">
+                        <div class="overlay-photo"><span class="badge-live"> SESSION RECONDUITE</span></div>
+                    </div>
+                    <div class="zone-details-evenement">
+                        <span class="tag-context">COMMUNAUTÉ & PRATIQUE</span>
+                        <h3>Découvrez nos moments forts en images !</h3>
+                        <p>Chez <strong>Elevation Académie</strong>, nous organisons régulièrement des sessions intensives en présentiel.</p>
+                        <div class="bloc-actions-sociales">
+                            <a href="https://www.facebook.com/share/p/18oaQ8b2Nq/" target="_blank" class="btn-action-evenement btn-galerie">Voir les photos du Présentiel</a>
+                            <a href="https://www.facebook.com/profile.php?id=61561248823386" target="_blank" class="btn-action-evenement btn-page-fb">Visiter notre Page Facebook</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Kou 2: Montage Vidéo -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500" alt="Montage Vidéo">
-                <div class="cours-info">
-                    <h3>Montage Vidéo Professionnel</h3>
-                    <p>Maîtrisez les coupures, les transitions, les effets spéciaux et exportez vos projets comme un pro.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'montage')">Voir le cours</button>
+        <!-- SEKSYON: À PROPOS DE NOUS -->
+        <section class="section-about-elevation">
+            <div class="about-container">
+                <span class="about-subtitle">À PROPOS DE NOUS</span>
+                <h2 class="about-main-title">ELEVATION ACADÉMIE</h2>
+                <div class="about-text-content">
+                    <p>Bienvenue à <strong>Elevation Académie</strong>, une plateforme de formation moderne dédiée à l'apprentissage pratique et à l'élévation des compétences.</p>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <!-- Kou 3: Live Streaming -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500" alt="Live Streaming">
-                <div class="cours-info">
-                    <h3>Live Streaming Pro</h3>
-                    <p>Apprenez à diffuser en direct comme un pro avec une configuration stable et une qualité studio.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'streaming')">Voir le cours</button>
-                </div>
+    <!-- ESPAS VIDEO (LI DEYÒ BLÒK PAJ AKEY LA POU L KA RETE APA) -->
+    <section id="workspace-cours" class="section-workspace-cours">
+        <div class="workspace-header">
+            <h2 id="titre-kou-aktif">Cours</h2>
+            <button onclick="retounenNanLis()" style="background:#ff9f43; color:white; border:none; padding:8px 15px; border-radius:5px; font-weight:bold; cursor:pointer;">Retour aux formations</button>
+        </div>
+        <div class="workspace-grid">
+            <div class="video-principal-box">
+                <video id="lecteur-video-elevation" controls controlsList="nodownload" onended="videoFini()"></video>
+                <h3 id="titre-video-aktif" style="margin-top:15px; color:#1b4d3e;">Titre de la vidéo</h3>
+                <p style="color:#666; margin-top:5px; font-size:14px;">Vous devez terminer cette vidéo pour débloquer la session suivante.</p>
             </div>
-
-            <!-- Kou 4: Marketing Digital -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Marketing Digital">
-                <div class="cours-info">
-                    <h3>Marketing Digital</h3>
-                    <p>Devenez un expert en publicité en ligne, créez des tunnels de vente et boostez votre visibilité.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'marketing')">Voir le cours</button>
-                </div>
+            <div class="playlist-box">
+                <div class="playlist-title">Programme de démonstration (10 cours)</div>
+                <div id="lis-video-kontener"></div>
             </div>
-
-            <!-- Kou 5: Entrepreneuriat -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500" alt="Entrepreneuriat">
-                <div class="cours-info">
-                    <h3>Entrepreneuriat</h3>
-                    <p>Créez, gérez et développez votre propre entreprise avec succès et stratégie financière.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'entrepreneuriat')">Voir le cours</button>
-                </div>
-            </div>
-
-            <!-- Kou 6: Retouche Photo -->
-            <div class="carte-cours">
-                <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500" alt="Retouche Photo">
-                <div class="cours-info">
-                    <h3>Retouche Photo Pro</h3>
-                    <p>Apprenez la correction des couleurs, la retouche de peau et le traitement d'image professionnel.</p>
-                    <button class="btn" onclick="verifierConnexion(event, 'retouche')">Voir le cours</button>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- 4. JAVASCRIPT : Ki voye moun sou signup.html oswa Google Form -->
+    <!-- SEKSYON: CONTACTEZ-NOUS (LI TOUJOURS LA NAN TOUT ENTEFAS YO) -->
+    <section id="contact" class="section-contact-elevation">
+        <div class="contact-wrapper">
+            <span class="contact-subtitle">DES QUESTIONS ?</span>
+            <h2 class="contact-main-title">CONTACTEZ-NOUS</h2>
+            <div class="contact-grid">
+                <div class="contact-info-box">
+                    <h3>Nos Coordonnées</h3>
+                    <div class="info-item"><div class="info-text"><strong>Adresse</strong><span>OUEST, Delmas, Haïti</span></div></div>
+                    <div class="info-item"><div class="info-text"><strong>Téléphone</strong><span>+509 3862-9690</span></div></div>
+                    <div class="info-item"><div class="info-text"><strong>Email</strong><span>elevationsa12@gmail.com</span></div></div>
+                </div>
+                <div class="contact-form-box">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="formulaire-contact" onsubmit="voyeMesajKontak(event)">
+                        <div class="form-group"><input type="text" id="nom-complet" placeholder="Votre nom" required></div>
+                        <div class="form-group"><input type="email" id="email-contact" placeholder="votreemail@gmail.com" required></div>
+                        <div class="form-group"><textarea id="message-contact" rows="5" placeholder="Message..." required></textarea></div>
+                        <button type="submit" class="btn-submit-contact">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STYLING CSS POU TOUT SEKSYON YO -->
+    <style>
+        .section-activites-pro { background-color: #f8fafc; padding: 50px 20px; margin-top: 50px; border-top: 1px solid #e2e8f0; }
+        .activites-wrapper { max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', sans-serif; }
+        .main-title-activites { font-size: 24px; color: #1b4d3e; margin-bottom: 25px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .carte-evenement-graphique { display: flex; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(27, 77, 62, 0.08); border: 1px solid #e2e8f0; }
+        .zone-image-evenement { flex: 1.2; position: relative; min-height: 350px; }
+        .zone-image-evenement img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .overlay-photo { position: absolute; top: 15px; left: 15px; }
+        .badge-live { background: #ff9f43; color: white; padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; }
+        .zone-details-evenement { flex: 1.5; padding: 35px; display: flex; flex-direction: column; justify-content: center; }
+        .tag-context { color: #ff9f43; font-size: 11px; font-weight: bold; letter-spacing: 1px; margin-bottom: 8px; display: inline-block; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 4px; width: fit-content; }
+        .zone-details-evenement h3 { font-size: 22px; color: #1b4d3e; margin-bottom: 15px; font-weight: 700; }
+        .zone-details-evenement p { font-size: 15px; line-height: 1.6; color: #4a5568; margin-bottom: 20px; }
+        .bloc-actions-sociales { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn-action-evenement { flex: 1; min-width: 200px; text-align: center; text-decoration: none; padding: 14px 20px; font-weight: bold; font-size: 14px; border-radius: 8px; transition: 0.2s; }
+        .btn-action-evenement:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn-galerie { background-color: #1b4d3e; color: white; }
+        .btn-page-fb { background-color: #ff9f43; color: white; }
+
+        .section-about-elevation { background-color: #ffffff; padding: 50px 20px; text-align: center; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+        .about-container { max-width: 800px; margin: 0 auto; }
+        .about-subtitle { display: inline-block; font-size: 12px; font-weight: bold; color: #1b4d3e; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+        .about-main-title { font-size: 28px; font-weight: 800; color: #111111; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .about-text-content p { font-size: 15px; line-height: 1.7; color: #4a5568; font-weight: 500; }
+
+        .section-contact-elevation { background-color: #f8fafc; padding: 70px 20px; }
+        .contact-subtitle { display: block; text-align: center; font-size: 13px; font-weight: 700; color: #1b4d3e; letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; }
+        .contact-main-title { text-align: center; font-size: 32px; font-weight: 800; color: #111111; margin-bottom: 40px; text-transform: uppercase; }
+        .contact-grid { display: flex; gap: 40px; }
+        .contact-info-box { flex: 1; background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; }
+        .contact-form-box { flex: 1.3; background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; }
+        .btn-submit-contact { background-color: #ff9f43; color: white; border: none; padding: 14px 25px; font-weight: bold; border-radius: 8px; width: 100%; cursor: pointer; font-size: 15px; transition: 0.2s; }
+        .btn-submit-contact:hover { background: #e08528; }
+
+        @media (max-width: 850px) {
+            .carte-evenement-graphique, .contact-grid { flex-direction: column; }
+            .bloc-actions-sociales { flex-direction: column; }
+            .btn-action-evenement { width: 100%; }
+            .zone-image-evenement { min-height: 250px; }
+        }
+    </style>
+
+    <!-- JAVASCRIPT LOGIK KACHE PAJ AKEY LA -->
     <script>
-    function verifierConnexion(event, coursId) {
-        // Nou bloke aksyon pa defo a pou kòd la ka ekzekite nèt
+    const bankVideyoTest = [
+        { id: 1, titre: "Cours 01: Introduction & Concepts", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+        { id: 2, titre: "Cours 02: Outils & Environnement", url: "https://www.w3schools.com/html/movie.mp4" },
+        { id: 3, titre: "Cours 03: Première Pratique", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+        { id: 4, titre: "Cours 04: Structure et Logique", url: "https://www.w3schools.com/html/movie.mp4" },
+        { id: 5, titre: "Cours 05: Atelier Pratique Étape 1", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+        { id: 6, titre: "Cours 06: Atelier Pratique Étape 2", url: "https://www.w3schools.com/html/movie.mp4" },
+        { id: 7, titre: "Cours 07: Astuces de Professionnels", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+        { id: 8, titre: "Cours 08: Exercice d'assimilation", url: "https://www.w3schools.com/html/movie.mp4" },
+        { id: 9, titre: "Cours 09: Correction de l'exercice", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+        { id: 10, titre: "Cours 10: Résumé & Prochaine étape", url: "https://www.w3schools.com/html/movie.mp4" }
+    ];
+
+    let idKouKouran = "";
+    let endisVideoKouran = 0;
+
+    function verifierConnexion(event, coursId, nomKou) {
         if (event) event.preventDefault();
-
-        if (!coursId) return;
-
-        // 1. Tcheke si moun nan konekte sou sit la deja
+        
         let isConnected = !!localStorage.getItem('elevation_user_name');
 
         if (isConnected) {
-            // Nou sove kou li chwazi a pou dashboard la ka konnen ki kou pou l montre l
             localStorage.setItem('cours_choisi', coursId);
+            let dejaEnskriNanKouSa = localStorage.getItem('form_' + coursId);
 
-            // 2. Tcheke si li te deja klike sou fòmasyon sa a anvan
-            let dejaEnskriForm = localStorage.getItem('form_' + coursId);
-
-            if (!dejaEnskriForm) {
-                // PREMYE FWA: Nou make l nan memwa a anvan nou pati
+            if (!dejaEnskriNanKouSa) {
                 localStorage.setItem('form_' + coursId, "true");
-
-                // Lyen Google Form pa w la
+                alert("Redirection vers le formulaire d'inscription pour le domaine : " + nomKou);
                 let lyenGoogleForm = "https://docs.google.com/forms/d/e/1FAIpQLSc8tsABw42wrrb1ncDmmCwc7Wk26uRLENBk-w-TUiHKy2OeFQ/viewform?usp=publish-editor";
-                
-                // Nou louvri fòm nan nan yon lòt tab
                 window.open(lyenGoogleForm, '_blank');
+                chajeWorkspaceKou(coursId, nomKou);
             } else {
-                // DEZYÈM FWA OUBYEN LÈ L TOUNEN: Nou voye l dwat nan dashboard li
-                window.location.href = 'dashboard.html';
+                chajeWorkspaceKou(coursId, nomKou);
             }
         } else {
-            // Si moun nan pa konekte, nou sove kou a tou pou lè l fini enskri pou l ka konnen kote l prale
             localStorage.setItem('cours_choisi', coursId);
             alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos.");
             window.location.href = 'signup.html';
         }
     }
+
+    // MODIFIKASYON POTORIK LA: NOU KACHE ENTEFAS PAJ AKEY LA LÈ NOU LOUVRI KOU A
+    function chajeWorkspaceKou(coursId, nomKou) {
+        idKouKouran = coursId;
+        document.getElementById('titre-kou-aktif').innerText = nomKou;
+        
+        // Nou kache tout paj akey la net ! (Bannè, Kat yo, a pwopo)
+        document.getElementById('blok-paj-akey').style.display = 'none';
+        
+        // Nou montre sèlman espas travay videyo a kounye a
+        document.getElementById('workspace-cours').style.display = 'block';
+        
+        let maxDebloke = parseInt(localStorage.getItem('pwogres_kou_' + idKouKouran)) || 1;
+        
+        manteLisVideyo(maxDebloke);
+        jweVideo(0); 
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function manteLisVideyo(maxDebloke) {
+        let kontener = document.getElementById('lis-video-kontener');
+        kontener.innerHTML = "";
+
+        bankVideyoTest.forEach((video, index) => {
+            let item = document.createElement('div');
+            item.className = "playlist-item";
+            
+            let isLocked = (index + 1) > maxDebloke;
+            
+            if (isLocked) {
+                item.classList.add('locked');
+                item.innerHTML = `<span>${video.titre}</span> <span class="badge-status b-locked">Bloqué</span>`;
+            } else {
+                let statusText = (index + 1) < maxDebloke ? "Terminé" : "À suivre";
+                let statusClass = (index + 1) < maxDebloke ? "b-done" : "b-unlocked";
+                
+                item.innerHTML = `<span>${video.titre}</span> <span class="badge-status ${statusClass}">${statusText}</span>`;
+                item.onclick = function() { jweVideo(index); };
+            }
+            kontener.appendChild(item);
+        });
+    }
+
+    function jweVideo(index) {
+        endisVideoKouran = index;
+        let videoData = bankVideyoTest[index];
+        let lecteur = document.getElementById('lecteur-video-elevation');
+        
+        document.getElementById('titre-video-aktif').innerText = videoData.titre;
+        lecteur.src = videoData.url;
+        lecteur.load();
+        lecteur.play().catch(e => console.log("Lancement automatique en attente..."));
+
+        let items = document.querySelectorAll('.playlist-item');
+        items.forEach((item, idx) => {
+            if(idx === index) item.classList.add('active');
+            else item.classList.remove('active');
+        });
+    }
+
+    function videoFini() {
+        let maxDebloke = parseInt(localStorage.getItem('pwogres_kou_' + idKouKouran)) || 1;
+        let vesoKiFiniAn = endisVideoKouran + 1;
+
+        if (vesoKiFiniAn === maxDebloke && maxDebloke < 10) {
+            maxDebloke++;
+            localStorage.setItem('pwogres_kou_' + idKouKouran, maxDebloke);
+            alert("Session validée ! La session suivante est débloquée.");
+        }
+
+        manteLisVideyo(maxDebloke);
+
+        if (endisVideoKouran < 9) {
+            jweVideo(endisVideoKouran + 1);
+        } else {
+            alert("Félicitations ! Vous avez complété les 10 sessions de test de ce module ! 🎉");
+        }
+    }
+
+    // LÈ LI RETOUNEN, NOU REMONTRE PAJ AKEY LA TOU NÒMAL
+    function retounenNanLis() {
+        document.getElementById('workspace-cours').style.display = 'none';
+        document.getElementById('blok-paj-akey').style.display = 'block';
+        document.getElementById('lecteur-video-elevation').pause();
+    }
+
+    function voyeMesajKontak(event) {
+        event.preventDefault();
+        let nom = document.getElementById('nom-complet').value;
+        alert("Merci " + nom + " ! Votre message a été envoyé avec succès.");
+        document.getElementById('formulaire-contact').reset();
+    }
     </script>
 
 </body>
 </html>
-<!-- ======================================================= -->
-    <!-- BÈL BANNER GRAFIK: AKTIVITE PRESANSYÈL (FOTO PC REYÈL) -->
-    <!-- ======================================================= -->
-    <section class="section-activites-pro">
-        <div class="activites-wrapper">
-            
-            <h2 class="main-title-activites">Nos Activités Présentielles & Événements</h2>
-            
-            <div class="carte-evenement-graphique">
-                
-                <!-- PATI GÒCH: FOTO KI SOTI DIRÈKTÈMAN SOU PC OU -->
-                <div class="zone-image-evenement">
-                    <!-- Lyen lokal foto download ou a -->
-                    <img src="pwoje-presansyel.jpg.jpg"alt="Formation Présentielle Elevation Académie">
-                    <div class="overlay-photo">
-                        <span class="badge-live"> SESSION RECONDUITE</span>
-                    </div>
-                </div>
-
-                <!-- PATI DWAT: DETAY AK BOUTON POU ENTERAJI -->
-                <div class="zone-details-evenement">
-                    <span class="tag-context">COMMUNAUTÉ & PRATIQUE</span>
-                    <h3>Découvrez nos moments forts en images !</h3>
-                    <p>
-                        Chez <strong>Elevation Académie</strong>, nous organisons régulièrement des sessions intensives en présentiel. Ce sont des ateliers pratiques et des séminaires où nos étudiants travaillent en direct avec les formateurs.
-                    </p>
-                    <p class="sub-text">
-                        Nous avons déjà réalisé plusieurs classes mémorables. Cliquez sur le bouton ci-dessous pour voir tout l'album photo complet de nos étudiants en pleine action sur notre page officielle.
-                    </p>
-
-                    <div class="bloc-actions-sociales">
-                        <!-- 1. Bouton pou wè piblikasyon foto yo sou FB -->
-                        <a href="https://www.facebook.com/share/p/18oaQ8b2Nq/" target="_blank" class="btn-action-evenement btn-galerie">
-                             Voir les photos du Présentiel
-                        </a>
-                        
-                        <!-- 2. Gwo Bouton Paj Facebook la nèt -->
-                        <a href="https://www.facebook.com/profile.php?id=61561248823386" target="_blank" class="btn-action-evenement btn-page-fb">
-                             Visiter notre Page Facebook
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- STYLING CSS -->
-    <style>
-        .section-activites-pro {
-            background-color: #f8fafc;
-            padding: 80px 20px;
-            margin-top: 60px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .activites-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        .main-title-activites {
-            font-size: 32px;
-            color: #1b4d3e;
-            margin-bottom: 35px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .carte-evenement-graphique {
-            display: flex;
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.08);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease;
-        }
-        .carte-evenement-graphique:hover {
-            transform: translateY(-5px);
-        }
-        .zone-image-evenement {
-            flex: 1.2;
-            position: relative;
-            min-height: 400px;
-            background: #13382d;
-        }
-        .zone-image-evenement img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .overlay-photo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-        .badge-live {
-            background: #ff9f43;
-            color: white;
-            padding: 6px 14px;
-            font-size: 11px;
-            font-weight: bold;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-        .zone-details-evenement {
-            flex: 1.5;
-            padding: 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .tag-context {
-            color: #ff9f43;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            display: block;
-        }
-        .zone-details-evenement h3 {
-            font-size: 26px;
-            color: #1b4d3e;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        .zone-details-evenement p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #4a5568;
-            margin-bottom: 15px;
-        }
-        .zone-details-evenement p strong {
-            color: #1b4d3e;
-        }
-        .sub-text {
-            font-size: 14px !important;
-            color: #718096 !important;
-            margin-bottom: 30px !important;
-        }
-        .bloc-actions-sociales {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .btn-action-evenement {
-            flex: 1;
-            min-width: 220px;
-            text-align: center;
-            text-decoration: none;
-            padding: 16px 25px;
-            font-weight: bold;
-            font-size: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .btn-galerie {
-            background-color: #1b4d3e;
-            color: white;
-            border: 2px solid #1b4d3e;
-        }
-        .btn-galerie:hover {
-            background-color: #13382d;
-            border-color: #13382d;
-        }
-        .btn-page-fb {
-            background-color: #ff9f43;
-            color: white;
-            border: 2px solid #ff9f43;
-        }
-        .btn-page-fb:hover {
-            background-color: #e08528;
-            border-color: #e08528;
-        }
-        @media (max-width: 850px) {
-            .carte-evenement-graphique { flex-direction: column; }
-            .zone-image-evenement { min-height: 250px; }
-            .zone-details-evenement { padding: 30px 20px; }
-            .bloc-actions-sociales { flex-direction: column; }
-            .btn-action-evenement { width: 100%; }
-        } <!-- ======================================================= -->
-<!-- SEKSYON: À PROPOS DE NOUS (STIL MINIMALISTE)            -->
-<!-- ======================================================= -->
-<section class="section-about-elevation">
-    <div class="about-container">
-        <!-- Ti sub-title anlè a ak ti espas ant lèt yo -->
-        <span class="about-subtitle">À PROPOS DE NOUS</span>
-        
-        <!-- Gwo Tit prensipal la nan mitan -->
-        <h2 class="about-main-title">ELEVATION ACADÉMIE</h2>
-        
-        <!-- Blòk tèks yo ki santre epi ki byen aere -->
-        <div class="about-text-content">
-            <p>
-                Bienvenue à <strong>Elevation Académie</strong>, une plateforme de formation moderne dédiée à l'apprentissage pratique et à l'élévation des compétences. Notre mission est d'offrir à chaque apprenant des cours accessibles, structurés et adaptés aux réalités du monde professionnel.
-            </p>
-            <p>
-                Nous proposons des formations dans plusieurs domaines afin d'aider les étudiants, entrepreneurs et professionnels à développer leurs talents, progresser à leur rythme et atteindre leurs objectifs. Grâce à une approche simple, interactive et orientée vers la pratique, nous mettons l'éducation à la portée de tous.
-            </p>
-            <p class="about-highlight">
-                À Elevation Académie, nous croyons que la connaissance est une clé pour transformer des vies et ouvrir de nouvelles opportunités.
-            </p>
-        </div>
-    </div>
-</section>
-/* Styling pou Seksyon À Propos */
-.section-about-elevation {
-    background-color: #ffffff; /* Sifas blan byen pwòp tankou modèl la */
-    padding: 90px 20px;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.about-container {
-    max-width: 850px; /* Pou tèks la pa twò laj e pou l fasil pou moun li */
-    margin: 0 auto;
-}
-
-.about-subtitle {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #1b4d3e; /* Koulè vèt fonse sit ou a */
-    letter-spacing: 4px; /* Ti espas ant lèt yo jan sa ye nan foto a */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.about-main-title {
-    font-size: 48px; /* Gwo tit byen frapan */
-    font-weight: 800;
-    color: #111111;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.about-text-content p {
-    font-size: 16px;
-    line-height: 1.8; /* Bay liy yo espas pou yo respire */
-    color: #4a5568; /* Yon ti gri fonse dous ki pa fatige je */
-    margin-bottom: 25px;
-    text-align: center; /* Santre tèks yo parfe jan w te mande l la */
-}
-
-.about-text-content strong {
-    color: #1b4d3e;
-}
-
-/* Ti anfaz sou dènye fraz la */
-.about-highlight {
-    font-size: 18px !important;
-    font-weight: 600;
-    color: #1b4d3e !important;
-    margin-top: 35px;
-    font-style: italic;
-}
-
-/* Responsive pou telefòn */
-@media (max-width: 768px) {
-    .section-about-elevation { padding: 60px 15px; }
-    .about-main-title { font-size: 32px; margin-bottom: 25px; }
-    .about-text-content p { font-size: 15px; line-height: 1.7; }
-}
