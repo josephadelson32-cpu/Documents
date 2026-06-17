@@ -50,7 +50,7 @@
         .btn { display: block; text-align: center; background: #1b4d3e; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; transition: 0.2s; border: none; width: 100%; font-size: 16px; cursor: pointer; }
         .btn:hover { background: #13382d; }
 
-        /* ESPAS TRAVAY 10 VIDEO YO */
+        /* ESPAS TRAVAY VIDEO SEPARE YO */
         .section-workspace-cours { max-width: 1200px; margin: 30px auto; padding: 20px; display: none; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
         .workspace-header { background: #1b4d3e; color: white; padding: 15px 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center; }
         .workspace-grid { display: flex; gap: 30px; padding: 20px 0; }
@@ -70,7 +70,6 @@
 </head>
 <body>
 
-    <!-- 1. HEADER AK FOTO LOGO -->
     <header>
         <div class="logo-container-elevation">
             <img src="logo.png" alt="Logo Elevation Académie">
@@ -80,18 +79,15 @@
             <a href="#" onclick="retounenNanLis()">Accueil</a>
             <a href="#cours" onclick="retounenNanLis()">Nos Cours</a>
             <a href="#contact">Contact</a>
-            <a href="signup.html" class="btn-header">S'inscrire / Connexion</a>
+            <a href="signup.html" class="btn-header" id="bouton-koneksyon">S'inscrire / Connexion</a>
         </nav>
     </header>
 
-    <!-- NOU METE YON ID NAN BLÒK PAJ AKEY LA POU NOU KA KACHE LÈ YO KLIKE SOU YON KOU -->
     <div id="blok-paj-akey">
-        <!-- 2. GWO BANNÈ AK FOTO BACKGROUND + BOUTON DECOUVRIR -->
         <section class="hero-banner">
             <h1>Bienvenue ! Découvrez nos cours</h1>
             <p>Suivez chaque formation avec <strong>patience</strong>, <strong>détermination</strong> et régularité. Prenez le temps de bien pratiquer pour maîtriser votre mutant métier. Le succès vous attend !</p>
             
-            <!-- SEKSYON VIDEYO PREZANTASYON ELEVATION ACADÉMIE -->
             <section class="section-video-presentation">
                 <div class="video-container">
                     <video autoplay muted loop playsinline id="video-promo-elevation">
@@ -116,14 +112,12 @@
             <a href="#cours" class="btn-discover">Découvrir nos cours</a>
         </section>
 
-        <!-- 3. SEKSYON TOUT KOU YO -->
         <section id="cours" class="section-cours">
             <h2 style="font-size: 22px; color: #1b4d3e; font-weight: bold;"> Nos Formations Disponibles</h2>
             <div class="grille-cours">
                 
-                <!-- Kou 1: Informatique -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1547483238-f400e65ccd56?w=500" alt="Informatique">
+                    <img src="informatique.jpg.jpg" alt="Informatique">
                     <div class="cours-info">
                         <h3>Informatique Bureautique</h3>
                         <p>Maîtrisez l'environnement Windows, Word, Excel, PowerPoint et la navigation internet de base.</p>
@@ -131,9 +125,8 @@
                     </div>
                 </div>
 
-                <!-- Kou 2: Montage Vidéo -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?w=500" alt="Montage Vidéo">
+                    <img src="montage.jpg.jfif" alt="Montage Vidéo">
                     <div class="cours-info">
                         <h3>Montage Vidéo Professionnel</h3>
                         <p>Maîtrisez les coupures, les transitions, les effets spéciaux et exportez vos projets comme un pro.</p>
@@ -141,9 +134,8 @@
                     </div>
                 </div>
 
-                <!-- Kou 3: Live Streaming -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500" alt="Live Streaming">
+                    <img src="live.jpg.jpg" alt="Live Streaming">
                     <div class="cours-info">
                         <h3>Live Streaming Pro</h3>
                         <p>Apprenez à diffuser en direct comme un pro avec une configuration stable et une qualité studio.</p>
@@ -151,9 +143,8 @@
                     </div>
                 </div>
 
-                <!-- Kou 4: Marketing Digital -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Marketing Digital">
+                    <img src="marketing.jpg.jpg" alt="Marketing Digital">
                     <div class="cours-info">
                         <h3>Marketing Digital</h3>
                         <p>Devenez un expert en publicité en ligne, créez des tunnels de vente et boostez votre visibilité.</p>
@@ -161,9 +152,8 @@
                     </div>
                 </div>
 
-                <!-- Kou 5: Entrepreneuriat -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500" alt="Entrepreneuriat">
+                    <img src="entrepreunariat.jpg.png" alt="Entrepreneuriat">
                     <div class="cours-info">
                         <h3>Entrepreneuriat</h3>
                         <p>Créez, gérez et développez votre propre entreprise avec succès et stratégie financière.</p>
@@ -171,9 +161,8 @@
                     </div>
                 </div>
 
-                <!-- Kou 6: Retouche Photo -->
                 <div class="carte-cours">
-                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500" alt="Retouche Photo">
+                    <img src="retouche.jpg.jpg" alt="Retouche Photo">
                     <div class="cours-info">
                         <h3>Retouche Photo Pro</h3>
                         <p>Apprenez la correction des couleurs, la retouche de peau et le traitement d'image professionnel.</p>
@@ -184,7 +173,6 @@
             </div>
         </section>
 
-        <!-- BÈL BANNER GRAFIK: AKTIVITE PRESANSYÈL -->
         <section class="section-activites-pro">
             <div class="activites-wrapper">
                 <h2 class="main-title-activites">Nos Activités Présentielles & Événements</h2>
@@ -206,7 +194,6 @@
             </div>
         </section>
 
-        <!-- SEKSYON: À PROPOS DE NOUS -->
         <section class="section-about-elevation">
             <div class="about-container">
                 <span class="about-subtitle">À PROPOS DE NOUS</span>
@@ -218,7 +205,6 @@
         </section>
     </div>
 
-    <!-- ESPAS VIDEO (LI DEYÒ BLÒK PAJ AKEY LA POU L KA RETE APA) -->
     <section id="workspace-cours" class="section-workspace-cours">
         <div class="workspace-header">
             <h2 id="titre-kou-aktif">Cours</h2>
@@ -231,13 +217,12 @@
                 <p style="color:#666; margin-top:5px; font-size:14px;">Vous devez terminer cette vidéo pour débloquer la session suivante.</p>
             </div>
             <div class="playlist-box">
-                <div class="playlist-title">Programme de démonstration (10 cours)</div>
+                <div class="playlist-title" id="playlist-titre-dinamik">Programme des cours</div>
                 <div id="lis-video-kontener"></div>
             </div>
         </div>
     </section>
 
-    <!-- SEKSYON: CONTACTEZ-NOUS (LI TOUJOURS LA NAN TOUT ENTEFAS YO) -->
     <section id="contact" class="section-contact-elevation">
         <div class="contact-wrapper">
             <span class="contact-subtitle">DES QUESTIONS ?</span>
@@ -262,11 +247,10 @@
         </div>
     </section>
 
-    <!-- STYLING CSS POU TOUT SEKSYON YO -->
     <style>
         .section-activites-pro { background-color: #f8fafc; padding: 50px 20px; margin-top: 50px; border-top: 1px solid #e2e8f0; }
-        .activites-wrapper { max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', sans-serif; }
-        .main-title-activites { font-size: 24px; color: #1b4d3e; margin-bottom: 25px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .activites-wrapper { max-width: 1200px; margin: 0 auto; }
+        .main-title-activites { font-size: 24px; color: #1b4d3e; margin-bottom: 25px; font-weight: 700; text-transform: uppercase; }
         .carte-evenement-graphique { display: flex; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(27, 77, 62, 0.08); border: 1px solid #e2e8f0; }
         .zone-image-evenement { flex: 1.2; position: relative; min-height: 350px; }
         .zone-image-evenement img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -285,12 +269,10 @@
         .section-about-elevation { background-color: #ffffff; padding: 50px 20px; text-align: center; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
         .about-container { max-width: 800px; margin: 0 auto; }
         .about-subtitle { display: inline-block; font-size: 12px; font-weight: bold; color: #1b4d3e; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
-        .about-main-title { font-size: 28px; font-weight: 800; color: #111111; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .about-main-title { font-size: 28px; font-weight: 800; color: #111111; margin-bottom: 20px; text-transform: uppercase; }
         .about-text-content p { font-size: 15px; line-height: 1.7; color: #4a5568; font-weight: 500; }
 
         .section-contact-elevation { background-color: #f8fafc; padding: 70px 20px; }
-        .contact-subtitle { display: block; text-align: center; font-size: 13px; font-weight: 700; color: #1b4d3e; letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; }
-        .contact-main-title { text-align: center; font-size: 32px; font-weight: 800; color: #111111; margin-bottom: 40px; text-transform: uppercase; }
         .contact-grid { display: flex; gap: 40px; }
         .contact-info-box { flex: 1; background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; }
         .contact-form-box { flex: 1.3; background: #ffffff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; }
@@ -303,27 +285,100 @@
             .carte-evenement-graphique, .contact-grid { flex-direction: column; }
             .bloc-actions-sociales { flex-direction: column; }
             .btn-action-evenement { width: 100%; }
-            .zone-image-evenement { min-height: 250px; }
         }
     </style>
 
-    <!-- JAVASCRIPT LOGIK KACHE PAJ AKEY LA -->
     <script>
-    const bankVideyoTest = [
-        { id: 1, titre: "Cours 01: Introduction & Concepts", url: "https://vjs.zencdn.net/v/oceans.mp4" },
-        { id: 2, titre: "Cours 02: Outils & Environnement", url: "https://www.w3schools.com/html/movie.mp4" },
-        { id: 3, titre: "Cours 03: Première Pratique", url: "https://vjs.zencdn.net/v/oceans.mp4" },
-        { id: 4, titre: "Cours 04: Structure et Logique", url: "https://www.w3schools.com/html/movie.mp4" },
-        { id: 5, titre: "Cours 05: Atelier Pratique Étape 1", url: "https://vjs.zencdn.net/v/oceans.mp4" },
-        { id: 6, titre: "Cours 06: Atelier Pratique Étape 2", url: "https://www.w3schools.com/html/movie.mp4" },
-        { id: 7, titre: "Cours 07: Astuces de Professionnels", url: "https://vjs.zencdn.net/v/oceans.mp4" },
-        { id: 8, titre: "Cours 08: Exercice d'assimilation", url: "https://www.w3schools.com/html/movie.mp4" },
-        { id: 9, titre: "Cours 09: Correction de l'exercice", url: "https://vjs.zencdn.net/v/oceans.mp4" },
-        { id: 10, titre: "Cours 10: Résumé & Prochaine étape", url: "https://www.w3schools.com/html/movie.mp4" }
-    ];
+    // Isit la, chak kou gen pwòp 10 videyo pa l nèt. Ou ka modifye lyen yo ak tit yo fasil isit la!
+    const bazDoneVideyo = {
+        informatique: [
+            { id: 1, titre: "Info 01: Introduction et decouvrir Excel", url: "introduction.mp4.mp4" },
+            { id: 2, titre: "Info 02: Gestion des fichiers", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Info 03: Découverte de Microsoft Word", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Info 04: Mise en page professionnelle", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Info 05: Introduction à MS Excel", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Info 06: Formules et Tableaux Excel", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Info 07: Créer un PowerPoint captivant", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Info 08: Sécurité sur internet", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Info 09: Outils Cloud (Google Drive)", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Info 10: Évaluation et Synthèse finale", url: "https://www.w3schools.com/html/movie.mp4" }
+        ],
+        montage: [
+            { id: 1, titre: "Montage 01: Bases du Montage Vidéo", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 2, titre: "Montage 02: Importation et Coupures", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Montage 03: Gestion du pistes Audio", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Montage 04: Effets et Transitions Pro", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Montage 05: Colorimétrie et Étalonnage", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Montage 06: Effets Spéciaux de Base", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Montage 07: Intégration de Titres Animés", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Montage 08: Sound Design de mutant", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Montage 09: Exportation optimale YouTube", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Montage 10: Projet final complet", url: "https://www.w3schools.com/html/movie.mp4" }
+        ],
+        streaming: [
+            { id: 1, titre: "Stream 01: Introduction au Live Streaming", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 2, titre: "Stream 02: Configuration de OBS Studio", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Stream 03: Paramètres Audio et Micros", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Stream 04: Scènes et Sources complexes", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Stream 05: Gestion de la Bande Passante", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Stream 06: Diffusion Multistream", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Stream 07: Intégration des Alertes Live", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Stream 08: Interaction avec le Chat", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Stream 09: Résolution des Bugs de Stream", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Stream 10: Lancement de votre premier Live", url: "https://www.w3schools.com/html/movie.mp4" }
+        ],
+        marketing: [
+            { id: 1, titre: "Marketing 01: Fondations du Digital", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 2, titre: "Marketing 02: Création de Tunnels de Vente", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Marketing 03: Publicité Facebook & Instagram Ads", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Marketing 04: Analyse des Statistiques", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Marketing 05: Email Marketing Automatisé", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Marketing 06: Stratégie de Contenu Organique", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Marketing 07: Copywriting d'Impact", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Marketing 08: Branding et Image de Marque", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Marketing 09: Vendre des Produits Digitaux", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Marketing 10: Plan d'Action sur 90 Jours", url: "https://www.w3schools.com/html/movie.mp4" }
+        ],
+        entrepreneuriat: [
+            { id: 1, titre: "Entreprendre 01: Esprit Entrepreneurial", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 2, titre: "Entreprendre 02: Trouver une Idée Rentable", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Entreprendre 03: Étude de Marché", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Entreprendre 04: Création du Business Plan", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Entreprendre 05: Gestion Financière Légère", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Entreprendre 06: Légalisation et Structure", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Entreprendre 07: Stratégie de Vente B2B/B2C", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Entreprendre 08: Recrutement et Délégation", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Entreprendre 09: Gestion du Stress et Leadership", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Entreprendre 10: Pitch devant des Investisseurs", url: "https://www.w3schools.com/html/movie.mp4" }
+        ],
+        retouche: [
+            { id: 1, titre: "Retouche 01: Introduction à Photoshop", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 2, titre: "Retouche 02: Gestion des Calques", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 3, titre: "Retouche 03: Correction de l'exposition", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 4, titre: "Retouche 04: Théorie des Couleurs", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 5, titre: "Retouche 05: Nettoyage de Peau Pro", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 6, titre: "Retouche 06: Détourage d'objets complexe", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 7, titre: "Retouche 07: Dodge and Burn", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 8, titre: "Retouche 08: Effets de Lumières Artificielles", url: "https://www.w3schools.com/html/movie.mp4" },
+            { id: 9, titre: "Retouche 09: Exportation Haute Définition", url: "https://vjs.zencdn.net/v/oceans.mp4" },
+            { id: 10, titre: "Retouche 10: Portfolio et Vente de services", url: "https://www.w3schools.com/html/movie.mp4" }
+        ]
+    };
 
     let idKouKouran = "";
     let endisVideoKouran = 0;
+
+    // VERIFIKASYON KONEKSYON SOU SEVÈ LOCAL LA (SOVGRAD)
+    window.onload = function() {
+        let itilizateKonekte = localStorage.getItem('elevation_user_name');
+        let boutonConnexion = document.getElementById('bouton-koneksyon');
+        
+        if (itilizateKonekte) {
+            boutonConnexion.innerText = "Profil: " + itilizateKonekte;
+            boutonConnexion.href = "#";
+            boutonConnexion.style.background = "#ff9f43";
+        }
+    };
 
     function verifierConnexion(event, coursId, nomKou) {
         if (event) event.preventDefault();
@@ -336,7 +391,7 @@
 
             if (!dejaEnskriNanKouSa) {
                 localStorage.setItem('form_' + coursId, "true");
-                alert("Redirection vers le formulaire d'inscription pour le domaine : " + nomKou);
+                alert("Redirection vers le formulaire d'inscription pour : " + nomKou);
                 let lyenGoogleForm = "https://docs.google.com/forms/d/e/1FAIpQLSc8tsABw42wrrb1ncDmmCwc7Wk26uRLENBk-w-TUiHKy2OeFQ/viewform?usp=publish-editor";
                 window.open(lyenGoogleForm, '_blank');
                 chajeWorkspaceKou(coursId, nomKou);
@@ -345,22 +400,22 @@
             }
         } else {
             localStorage.setItem('cours_choisi', coursId);
-            alert("Veuillez vous inscrire ou vous connecter pour accéder aux vidéos.");
+            alert("Veuillez vous inscrire ou vous connecter pour accéder à vos cours.");
             window.location.href = 'signup.html';
         }
     }
 
-    // MODIFIKASYON POTORIK LA: NOU KACHE ENTEFAS PAJ AKEY LA LÈ NOU LOUVRI KOU A
     function chajeWorkspaceKou(coursId, nomKou) {
         idKouKouran = coursId;
         document.getElementById('titre-kou-aktif').innerText = nomKou;
+        document.getElementById('playlist-titre-dinamik').innerText = "Programme: " + nomKou + " (10 Sessions)";
         
-        // Nou kache tout paj akey la net ! (Bannè, Kat yo, a pwopo)
+        // Kache paj akey
         document.getElementById('blok-paj-akey').style.display = 'none';
-        
-        // Nou montre sèlman espas travay videyo a kounye a
+        // Montre espas travay
         document.getElementById('workspace-cours').style.display = 'block';
         
+        // Chaje nivo pwogrè elèv la sove pou kou sa a
         let maxDebloke = parseInt(localStorage.getItem('pwogres_kou_' + idKouKouran)) || 1;
         
         manteLisVideyo(maxDebloke);
@@ -372,8 +427,11 @@
     function manteLisVideyo(maxDebloke) {
         let kontener = document.getElementById('lis-video-kontener');
         kontener.innerHTML = "";
+        
+        // Pran lis videyo ki koresponn ak kou a sèlman
+        let lisVideyoKouKouran = bazDoneVideyo[idKouKouran] || [];
 
-        bankVideyoTest.forEach((video, index) => {
+        lisVideyoKouKouran.forEach((video, index) => {
             let item = document.createElement('div');
             item.className = "playlist-item";
             
@@ -395,19 +453,22 @@
 
     function jweVideo(index) {
         endisVideoKouran = index;
-        let videoData = bankVideyoTest[index];
+        let lisVideyoKouKouran = bazDoneVideyo[idKouKouran] || [];
+        let videoData = lisVideyoKouKouran[index];
         let lecteur = document.getElementById('lecteur-video-elevation');
         
-        document.getElementById('titre-video-aktif').innerText = videoData.titre;
-        lecteur.src = videoData.url;
-        lecteur.load();
-        lecteur.play().catch(e => console.log("Lancement automatique en attente..."));
+        if(videoData) {
+            document.getElementById('titre-video-aktif').innerText = videoData.titre;
+            lecteur.src = videoData.url;
+            lecteur.load();
+            lecteur.play().catch(e => console.log("Lancement automatique fluide..."));
 
-        let items = document.querySelectorAll('.playlist-item');
-        items.forEach((item, idx) => {
-            if(idx === index) item.classList.add('active');
-            else item.classList.remove('active');
-        });
+            let items = document.querySelectorAll('.playlist-item');
+            items.forEach((item, idx) => {
+                if(idx === index) item.classList.add('active');
+                else item.classList.remove('active');
+            });
+        }
     }
 
     function videoFini() {
@@ -416,20 +477,20 @@
 
         if (vesoKiFiniAn === maxDebloke && maxDebloke < 10) {
             maxDebloke++;
+            // Sove nouvo pwogrè sa a nan "sèvè" local la pou sekirite done yo
             localStorage.setItem('pwogres_kou_' + idKouKouran, maxDebloke);
-            alert("Session validée ! La session suivante est débloquée.");
+            alert("Session validée ! Étape suivante débloquée.");
         }
 
         manteLisVideyo(maxDebloke);
-
+        
         if (endisVideoKouran < 9) {
             jweVideo(endisVideoKouran + 1);
         } else {
-            alert("Félicitations ! Vous avez complété les 10 sessions de test de ce module ! 🎉");
+            alert("Félicitations ! Vous avez complété ce module avec succès ! 🎉");
         }
     }
 
-    // LÈ LI RETOUNEN, NOU REMONTRE PAJ AKEY LA TOU NÒMAL
     function retounenNanLis() {
         document.getElementById('workspace-cours').style.display = 'none';
         document.getElementById('blok-paj-akey').style.display = 'block';
@@ -439,7 +500,7 @@
     function voyeMesajKontak(event) {
         event.preventDefault();
         let nom = document.getElementById('nom-complet').value;
-        alert("Merci " + nom + " ! Votre message a été envoyé avec succès.");
+        alert("Merci " + nom + " ! Votre message a été envoyé à l'administration d'Elevation Académie.");
         document.getElementById('formulaire-contact').reset();
     }
     </script>
